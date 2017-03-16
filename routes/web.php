@@ -12,9 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/hello/{name?}', function($name = 'world') {
-    return view('hello')->with('name', $name);
+    $data = [
+        'name' => 'jane',
+        'email' => 'jane@doe.com',
+        'location' => 'Florida',
+        'last_name' => 'Doe'
+    ];
+    return view('hello')->withData($data);
 });
