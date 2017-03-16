@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    $data = [
-        'name' => 'jane',
-        'email' => 'jane@doe.com',
-        'location' => 'Florida',
-        'last_name' => 'Doe'
-    ];
-    return view('hello')->withData($data);
-});
+/**
+ * / = home
+ * /todos - all lists
+ * /todos/1 - show
+ * /todos/1/edit - edit and update
+ * /todos/create - create new list
+ **/
+
+
+Route::get('/', 'TodoListController@index');
+
+Route::get('/todos', 'TodoListController@index');
+
+Route::get('/todos/{id}', 'TodoListController@show');
