@@ -25,10 +25,7 @@ class TodoListController extends Controller
      */
     public function create()
     {
-        $list = new TodoList();
-        $list->name = "Another List";
-        $list->save();
-        return "Created a new list";
+        return view('todos.create');
     }
 
     /**
@@ -39,7 +36,10 @@ class TodoListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "Creating a new list";
+        // $list = new TodoList();
+        // $list->name = "Another List";
+        // $list->save();
     }
 
     /**
